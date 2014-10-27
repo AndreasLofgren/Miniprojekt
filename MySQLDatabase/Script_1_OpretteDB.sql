@@ -35,12 +35,20 @@ model					varchar(15),
 motorstr 				varchar(15),
 braendstof				char (6),
 kmtaeller 				int 			not null,
-prisgruppe				char(1)
+prisgruppe				char(1),
+registreringsnummer		char(10)
+
 )engine=innodb;
 
 drop table if exists reservationer;
 create table reservationer
 (
 date					int
+)engine=innodb;
+
+drop table if exists kontrakttabel;
+create table kontrakttabel
+(
+kontraktnummer			int
 )engine=innodb;
 
