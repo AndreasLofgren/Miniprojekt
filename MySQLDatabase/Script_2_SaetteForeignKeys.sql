@@ -26,13 +26,26 @@ alter table biler
 	add foreign key (prisgruppe)	references prisgruppe (prisgruppe);
 
 alter table ledigebiler
-	add column registreringsnummer	char(8),
-	add foreign key (registreringsnummer) references biler (registreringsnummer);
+	add column bilmaerke	varchar(15),
+	add column model		varchar(15),
+	add foreign key (bilmaerke, model) references biler (bilmaerke, model);
 
 alter table reservation
- 	add column ejReserveret 		tinyint,
-	add foreign key (ejReserveret) references ledigebiler (ejReserveret);
+ 	add column registreringsnummer 		char(7),
+	add foreign key (registreringsnummer) references ledigebiler (registreringsnummer);
 
 -- punkt 5. Vi har ingen n:m forbindelser, derfor springer vi dette punkt over.
 -- punkt 6. vi har ingen flerværdi attributter, 
+
+create table telefon
+	(
+	cpr	char(10) not null,
+	tlf char(8),
+	primary key (cpr, tlf),
+	foreign key (cpr) references kunde (cpr)
+	)engine=innodb;
+
+alter table kunde
+drop column telefonnummer;
+
 -- punkt 7. der findes ingen forbindelser hvor der indgår mere end to entiteter. 

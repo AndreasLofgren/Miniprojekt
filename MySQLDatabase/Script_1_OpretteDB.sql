@@ -27,7 +27,11 @@ drop table if exists ledigebiler;
 create table ledigebiler
 (
 ejReserveret 			tinyint,
-primary key				(ejReserveret)
+registreringsnummer		char(7)			not null,
+motorstr 				varchar(15)		not null,
+braendstof				char (6)		not null,
+kmtaeller 				int 			not null,
+primary key				(registreringsnummer)
 )engine=innodb;
 
 drop table if exists biler;
@@ -35,12 +39,8 @@ create table biler
 (
 bilmaerke 				varchar(15),
 model					varchar(15),
-motorstr 				varchar(15),
-braendstof				char (6),
-kmtaeller 				int 			not null,
 prisgruppe				char(1)			not null,
-registreringsnummer		char(8)			not null,
-primary key 			(registreringsnummer)
+primary key 			(bilmaerke, model)
 )engine=innodb;
 
 drop table if exists reservation;
