@@ -11,21 +11,23 @@ package biludlejning;
  */
 public class Prisgruppe {
 
-    private char prisgruppe;
+    private String prisgruppe;
     private int dagleje;
     private int kilometerpris;
     private int benzinpris;
 
-    public Prisgruppe(char prisgruppe, int dagleje) {
+    public Prisgruppe(String prisgruppe) {
         this.prisgruppe = prisgruppe;
-        this.dagleje = dagleje;
+        dagleje = 0;
+        kilometerpris = 0;
+        benzinpris = 0;
     }
 
-    public char getPrisgruppe() {
+    public String getPrisgruppe() {
         return prisgruppe;
     }
 
-    public void setPrisgruppe(char prisgruppe) {
+    public void setPrisgruppe(String prisgruppe) {
         this.prisgruppe = prisgruppe;
     }
 

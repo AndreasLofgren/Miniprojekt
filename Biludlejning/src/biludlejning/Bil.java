@@ -21,6 +21,10 @@ public class Bil {
         this.model = model;
     }
 
+    public void setPrisgruppe(Prisgruppe prisgruppe) {
+        this.prisgruppe = prisgruppe;
+    }
+
     public Prisgruppe getPrisgruppe() {
         return prisgruppe;
     }
