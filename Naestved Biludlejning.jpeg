@@ -1,0 +1,275 @@
+<Project>
+  <Name>Næstved Biludlejning </Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>CLASSDIAGRAM</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Erhverv</Name>
+        <Access>Public</Access>
+        <Location left="27" top="207" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int cvr</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Privat</Name>
+        <Access>Public</Access>
+        <Location left="27" top="44" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int cpr</Member>
+        <Member type="Field">String fnavn</Member>
+        <Member type="Field">String enavn</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Kunde</Name>
+        <Access>Public</Access>
+        <Location left="267" top="44" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int koerekortnummer</Member>
+        <Member type="Field">String navn</Member>
+        <Member type="Field">String tlf</Member>
+        <Member type="Field">String cpr</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Reservation</Name>
+        <Access>Public</Access>
+        <Location left="479" top="44" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">datetime fromdate</Member>
+        <Member type="Field">datetime todate</Member>
+        <Member type="Field">Kunde kunde</Member>
+        <Member type="Field">int kontraknummer</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Prisgruppe</Name>
+        <Access>Public</Access>
+        <Location left="938" top="44" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">char prisgruppe</Member>
+        <Member type="Field">int dagleje</Member>
+        <Member type="Field">int kilometerpris</Member>
+        <Member type="Field">int benzinpris</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Bil</Name>
+        <Access>Public</Access>
+        <Location left="696" top="44" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Prisgruppe prisgruppe</Member>
+        <Member type="Field">String bilmaerke</Member>
+        <Member type="Field">String model</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LedigeBiler</Name>
+        <Access>Public</Access>
+        <Location left="696" top="245" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Bil bil</Member>
+        <Member type="Field">Double motorstr</Member>
+        <Member type="Field">int registeringsnummer</Member>
+        <Member type="Field">int kilometertaeller</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="1" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>242</X>
+          <Y>109</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="5" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>671</X>
+          <Y>99</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Classdiogram prog</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Kunde</Name>
+        <Access>Public</Access>
+        <Location left="18" top="119" />
+        <Size width="162" height="152" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int koerekortnummer</Member>
+        <Member type="Field">private String navn</Member>
+        <Member type="Field">private String tlf</Member>
+        <Member type="Field">private String cpr</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Reservation</Name>
+        <Access>Public</Access>
+        <Location left="219" top="119" />
+        <Size width="162" height="163" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private datetime fromdate</Member>
+        <Member type="Field">private datetime todate</Member>
+        <Member type="Field">private Kunde kunde</Member>
+        <Member type="Field">private int kontraktnummer</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Bil</Name>
+        <Access>Public</Access>
+        <Location left="438" top="323" />
+        <Size width="162" height="132" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Prisgruppe prisgruppe</Member>
+        <Member type="Field">private String bilmaerke</Member>
+        <Member type="Field">private String model</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LedigeBiler</Name>
+        <Access>Public</Access>
+        <Location left="438" top="145" />
+        <Size width="162" height="149" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Bil bil</Member>
+        <Member type="Field">private Double motorstr</Member>
+        <Member type="Field">private int registeringsnummer</Member>
+        <Member type="Field">private int kilometertaeller</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Prisgruppe</Name>
+        <Access>Public</Access>
+        <Location left="643" top="309" />
+        <Size width="162" height="151" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Char prisgruppe</Member>
+        <Member type="Field">private int dagleje</Member>
+        <Member type="Field">private int kilometerpris</Member>
+        <Member type="Field">private int benzinpris</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Biludlejning</Name>
+        <Access>Public</Access>
+        <Location left="219" top="323" />
+        <Size width="162" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ArrayList bil</Member>
+        <Member type="Field">private ArrayList ledigebiler</Member>
+        <Member type="Field">private ArrayList kunder</Member>
+        <Member type="Field">private ArrayList reservation</Member>
+        <Member type="Field">private ArrayList kontrakter</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Næstved Biludlejning
+- Classdiagram til Programmering JAVA.
+</Text>
+        <Location left="18" top="16" />
+        <Size width="213" height="75" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>194</X>
+          <Y>217</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>518</X>
+          <Y>298</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>618</X>
+          <Y>398</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>305</X>
+          <Y>308</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>413</X>
+          <Y>402</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
