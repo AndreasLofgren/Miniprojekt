@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Erhverv</Name>
         <Access>Public</Access>
-        <Location left="98" top="413" />
+        <Location left="27" top="207" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int cvr</Member>
@@ -16,7 +16,7 @@
       <Entity type="Class">
         <Name>Privat</Name>
         <Access>Public</Access>
-        <Location left="98" top="245" />
+        <Location left="27" top="44" />
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int cpr</Member>
@@ -27,7 +27,7 @@
       <Entity type="Class">
         <Name>Kunde</Name>
         <Access>Public</Access>
-        <Location left="368" top="318" />
+        <Location left="267" top="44" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int koerekortnummer</Member>
@@ -39,7 +39,7 @@
       <Entity type="Class">
         <Name>Reservation</Name>
         <Access>Public</Access>
-        <Location left="640" top="318" />
+        <Location left="497" top="44" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">datetime fromdate</Member>
@@ -51,7 +51,7 @@
       <Entity type="Class">
         <Name>Prisgruppe</Name>
         <Access>Public</Access>
-        <Location left="1170" top="292" />
+        <Location left="938" top="44" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">char prisgruppe</Member>
@@ -63,7 +63,7 @@
       <Entity type="Class">
         <Name>Bil</Name>
         <Access>Public</Access>
-        <Location left="893" top="330" />
+        <Location left="696" top="44" />
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Prisgruppe prisgruppe</Member>
@@ -74,7 +74,7 @@
       <Entity type="Class">
         <Name>LedigeBiler</Name>
         <Access>Public</Access>
-        <Location left="949" top="56" />
+        <Location left="696" top="245" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Bil bil</Member>
@@ -92,10 +92,12 @@
       <Relationship type="Generalization" first="0" second="2">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>242</X>
+          <Y>109</Y>
+        </BendPoint>
       </Relationship>
       <Relationship type="Association" first="5" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -104,8 +106,6 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -114,8 +114,6 @@
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -124,10 +122,12 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="5">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>671</X>
+          <Y>99</Y>
+        </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
@@ -221,40 +221,30 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>

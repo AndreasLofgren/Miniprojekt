@@ -2,7 +2,6 @@
 
 \usepackage{amsmath,amssymb}	% for mathematical notation
 \usepackage{float} 				% put things exactly where I tell you!
-\usepackage{multicol} 			% for column layout
 \usepackage[utf8]{inputenc} 	% can we has UTF-8, plox
 \usepackage{listings}           % for embedded code
 \usepackage{graphicx}           % for pretty pictures
@@ -28,10 +27,11 @@
 \tableofcontents
 
 \section*{Systemudvikling}
+\subsection*{Use-case}
 \begin{figure}
   \centering
   \includegraphics[width=10cm]{Naestved_Biludlejning_USECASE.jpeg}
-  \caption{Use-case diagram}
+  \caption{Brugsmønstre}
   \label{fig:Use-case diagram}
 \end{figure}
 
@@ -41,9 +41,10 @@ Annullere reservationer & Annullering af reservation, hvis en reservation skal s
 Afregning & Den samlede afregning for lejen. \\ \hline
 Afhentning & Kunden afhenter bilen. Bilens korte kilometer skal noteres.\\ \hline
 Aflevering & Aflevering af bilen. Mængden af benzin og det kørte antal kilometer skal noteres. \\ \hline
+Find reservation & Søgning af reservationer baseret på navn, dato, cpr-nummer, eller andet.
 \end{tabular}\\
 
-Af disse funktioner da er oprettelse af reservationer den vigtigste, da den er påkrævet for at de andre fungerer.\\
+Af disse brugsmønstre da er oprettelse af reservationer den vigtigste, da den er påkrævet for at de andre fungerer. Alle funktioner undtagen afregning gå ind og ændrer på lejekontrakten, derfor inkluderer de Find reservation, da den bliver brugt til at søge i reservationerne.\\
 
 Successcenarie for Oprettelse af reservation:
 \begin{enumerate}
@@ -53,12 +54,26 @@ Successcenarie for Oprettelse af reservation:
 \item Den færdige lejekontrakt bliver lavet og kan eventuelt printes.\\
 \end{enumerate}
 
- Specialscenarie for Oprettelse af reservation:
+Specialscenarie for Oprettelse af reservation:
 \begin{enumerate}
 \item Kunden siger hvilken periode og prisgruppe han er interesseret i.
 \item Hvis der ikke er nogle ledige biler i den prisgruppe, da vil der ikke komme nogle biler frem.
 \end{enumerate}
 
-Løsningen er at tilbyde en bil fra en anden prisgruppe.
+Løsningen er at tilbyde en bil fra en anden prisgruppe. \\
+
+\subsection*{Domænemodel}
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{CLASSDIAGRAM.jpg}
+  \caption{Domænemodel}
+  \label{fig:Domaenemodel}
+\end{figure}
+
+I vores domænemodel har vi en generaliseret kundeklasse til en privatkunde og erhvervskunde, da man skal registrere forskellige oplysninger til hver.\\\\
+Reservationsklassen bruger et kundeobjekt til at blive oprettet og henter oplysninger fra bilklassen. Den har også en til- og fra-dato.\\\\
+Bilklassen bruger et prisgruppeobjekt til at blive oprettet.\\\\
+Prisgruppe indeholder de forskellige kategorier for bilerne og indeholder også alle priserne (dagleje, kilometerpris og benzinpris).\\\\
+Klassen LedigeBiler bruges til at holde styr på de fysiske udgaver af bilerne og viser hvilke der er ledige for udlejning. Den har oplysninger om den enkelte bil. Den bruger et bilobjekt til at blive oprettet.
 
 \end{document}
