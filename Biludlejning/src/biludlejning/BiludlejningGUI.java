@@ -17,6 +17,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     public BiludlejningGUI() {
         initComponents();
     }
+    DBForbindelse db = new DBForbindelse();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,6 +37,24 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jOpretReservation = new javax.swing.JButton();
         jFindReservation = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jLedigeBiler = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+        jPrisgruppe = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jSlutDag = new javax.swing.JComboBox();
+        jSlutMåned = new javax.swing.JComboBox();
+        jSlutÅr = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jStartÅr = new javax.swing.JComboBox();
+        jStartMåned = new javax.swing.JComboBox();
+        jStartDag = new javax.swing.JComboBox();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jNæste = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jFornavn = new javax.swing.JTextField();
         jEfternavn = new javax.swing.JTextField();
@@ -57,24 +76,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jRediger = new javax.swing.JButton();
         jOpdater = new javax.swing.JButton();
         jSøg = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jLedigeBiler = new javax.swing.JTextArea();
-        jLabel9 = new javax.swing.JLabel();
-        jPrisgruppe = new javax.swing.JComboBox();
-        jLabel10 = new javax.swing.JLabel();
-        jSlutDag = new javax.swing.JComboBox();
-        jSlutMåned = new javax.swing.JComboBox();
-        jSlutÅr = new javax.swing.JComboBox();
-        jLabel11 = new javax.swing.JLabel();
-        jStartÅr = new javax.swing.JComboBox();
-        jStartMåned = new javax.swing.JComboBox();
-        jStartDag = new javax.swing.JComboBox();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jNæste = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPrint = new javax.swing.JButton();
@@ -161,143 +163,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         );
 
         jTabbedPane2.addTab("Startside", jPanel1);
-
-        jLabel1.setText("Fornavn");
-
-        jLabel2.setText("Efternavn");
-
-        jLabel3.setText("Telefon");
-
-        jLabel4.setText("CPR");
-
-        jLabel5.setText("Kørekortsnummer");
-
-        jLabel6.setText("Kundeoplysninger");
-
-        jOpretKunde.setText("Opret kunde");
-        jOpretKunde.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jOpretKundeActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jEfternavn, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                            .addComponent(jKørekort)
-                            .addComponent(jFornavn)
-                            .addComponent(jCPRnr)
-                            .addComponent(jTlfnr)))
-                    .addComponent(jLabel6)
-                    .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(130, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFornavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jEfternavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCPRnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTlfnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jKørekort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Kundeoplysninger", jPanel3);
-
-        jSøgefelt.setText("Søg efter navn, kontraktnummer osv.");
-
-        jLabel8.setText("Find reservationer");
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane6.setViewportView(jTable2);
-
-        jRediger.setText("Redigér reservation");
-
-        jOpdater.setText("Opdater reservation");
-
-        jSøg.setText("Søg");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jOpdater)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel8)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jSøgefelt)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jSøg))
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRediger))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSøg))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
-                .addComponent(jRediger)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jOpdater)
-                .addGap(39, 39, 39))
-        );
-
-        jTabbedPane2.addTab("Find reservation", jPanel5);
 
         jLedigeBiler.setColumns(20);
         jLedigeBiler.setRows(5);
@@ -411,6 +276,160 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         );
 
         jTabbedPane2.addTab("Ledige biler", jPanel2);
+
+        jLabel1.setText("Fornavn");
+
+        jLabel2.setText("Efternavn");
+
+        jLabel3.setText("Telefon");
+
+        jLabel4.setText("CPR");
+
+        jLabel5.setText("Kørekortsnummer");
+
+        jLabel6.setText("Kundeoplysninger");
+
+        jOpretKunde.setText("Opret kunde");
+        jOpretKunde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOpretKundeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jEfternavn, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(jKørekort)
+                            .addComponent(jFornavn)
+                            .addComponent(jCPRnr)
+                            .addComponent(jTlfnr)))
+                    .addComponent(jLabel6)
+                    .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(130, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFornavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jEfternavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCPRnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTlfnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jKørekort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Kundeoplysninger", jPanel3);
+
+        jSøgefelt.setText("Søg efter navn, kontraktnummer osv.");
+
+        jLabel8.setText("Find reservationer");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable2);
+
+        jRediger.setText("Redigér reservation");
+
+        jOpdater.setText("Opdater reservation");
+
+        jSøg.setText("Søg");
+        jSøg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSøgActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Aflevering");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jSøgefelt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSøg))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jRediger))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(248, 248, 248)
+                                .addComponent(jOpdater))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSøg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addComponent(jRediger)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jOpdater)
+                    .addComponent(jButton2))
+                .addGap(39, 39, 39))
+        );
+
+        jTabbedPane2.addTab("Find reservation", jPanel5);
 
         jLabel7.setText("Lejekontrakt");
 
@@ -639,7 +658,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jOpretReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretReservationActionPerformed
-        jTabbedPane2.setSelectedIndex(3);
+        jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_jOpretReservationActionPerformed
 
     private void jFindReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFindReservationActionPerformed
@@ -647,6 +666,9 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jFindReservationActionPerformed
 
     private void jOpretKundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretKundeActionPerformed
+        db.DML("Insert into kunde "
+                + "values(" + jCPRnr.getText() + "," + jKørekort.getText() + ",'" + jFornavn.getText() + "','" + jEfternavn.getText() + "'," + jTlfnr.getText() + ")");
+
         jTabbedPane2.setSelectedIndex(4);
         jFornavn1.setText(jFornavn.getText());
         jEfternavn1.setText(jEfternavn.getText());
@@ -655,8 +677,8 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jKørekort1.setText(jKørekort.getText());
         jStartdato.setText(jStartDag.getSelectedItem() + " " + jStartMåned.getSelectedItem() + " " + jStartÅr.getSelectedItem());
         jSlutdato.setText(jSlutDag.getSelectedItem() + " " + jSlutMåned.getSelectedItem() + " " + jSlutÅr.getSelectedItem());
-        jPrisgruppe1.setText(""+jPrisgruppe.getSelectedItem());
-        
+        jPrisgruppe1.setText("" + jPrisgruppe.getSelectedItem());
+
         jFornavn1.setEditable(false);
         jEfternavn1.setEditable(false);
         jCPRnr1.setEditable(false);
@@ -668,7 +690,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jOpretKundeActionPerformed
 
     private void jNæsteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNæsteActionPerformed
-        jTabbedPane2.setSelectedIndex(1);
+        jTabbedPane2.setSelectedIndex(2);
     }//GEN-LAST:event_jNæsteActionPerformed
 
     private void jTlfnr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTlfnr1ActionPerformed
@@ -682,6 +704,11 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private void jRegistreringsnummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegistreringsnummerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRegistreringsnummerActionPerformed
+
+    private void jSøgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgActionPerformed
+        db.DDL("Select * from kunde");
+
+    }//GEN-LAST:event_jSøgActionPerformed
 
     /**
      * @param args the command line arguments
@@ -722,6 +749,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jBilmodel;
     private javax.swing.JTextField jBilmærke;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JTextField jCPRnr;
     private javax.swing.JTextField jCPRnr1;
     private javax.swing.JComboBox jComboBox1;
