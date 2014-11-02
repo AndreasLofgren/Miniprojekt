@@ -27,7 +27,7 @@ public class Biludlejning {
         ledigeBiler = new ArrayList<>();
         kunder = new ArrayList<>();
         kontrakter = new ArrayList<>();
-        
+        db = new DBForbindelse();
         
         
     }

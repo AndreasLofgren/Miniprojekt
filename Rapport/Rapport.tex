@@ -23,8 +23,8 @@
 
 \begin{document}
 \maketitle
-\pagebreak
 \tableofcontents
+\pagebreak
 
 \section*{Systemudvikling}
 \subsection*{Use-case}
@@ -75,5 +75,23 @@ Reservationsklassen bruger et kundeobjekt til at blive oprettet og henter oplysn
 Bilklassen bruger et prisgruppeobjekt til at blive oprettet.\\\\
 Prisgruppe indeholder de forskellige kategorier for bilerne og indeholder også alle priserne (dagleje, kilometerpris og benzinpris).\\\\
 Klassen LedigeBiler bruges til at holde styr på de fysiske udgaver af bilerne og viser hvilke der er ledige for udlejning. Den har oplysninger om den enkelte bil. Den bruger et bilobjekt til at blive oprettet.
+
+\section*{Programmering}
+\subsection*{Klassediagram}
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{Classdiagram_prog.jpg}
+  \caption{Klassediagram}
+  \label{fig:Klassediagram}
+\end{figure}
+
+Vores klassediagram, der viser hvad programmet indeholder:\\
+Prisgruppeklassen indeholder priser og bilkategorier. Bilklassen indeholder prisgruppe og oplysniinger om bilerne. De ledige biler har en klasse for sig selv, der bruger bilklassen. Kudenklassen indeholder alle oplysninger om kunden. Reservationsklassen bruger kundeklassen til at oprette en reservation og Det hele ligger i arraylister i biludlejningsklassen.
+
+\subsection*{Kode}
+Modelklasserne består udelukkende af gettere og settere.\\\\
+GUI'en er bygget op med tabs for de forskellige skærmvinduer. Man kan fra forsiden oprette eller finde reservationer.\\\\
+Hvis man vil oprette en reservation, da skal man først vælge en periode og en prisgruppe, så kommer en liste af ledige biler. Efter man har valgt en bil skal man trykke næste og indtaste kundeoplysninger og bagefter opretter man kunden og så har man den færdige lejekontrakt.\\\\
+Hvis man vil søge efter en reservation, kan man søge efter flere parametre og man vil få en tabel med søgeresultaterne.
 
 \end{document}
