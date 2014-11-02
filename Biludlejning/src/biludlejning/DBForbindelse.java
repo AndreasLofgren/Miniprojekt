@@ -7,6 +7,7 @@ package biludlejning;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -18,17 +19,24 @@ public class DBForbindelse {
     
     
     public DBForbindelse() {
-         try {
+    
+        }
+    public void DDL(String sql){
+             try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
-            String url = "jdbc:mysql://localhost:3306/mycontacts";
-            conn = DriverManager.getConnection(url, "root", "root");
+            String url = "jdbc:mysql://localhost:3306/biludlejning";
+            conn = DriverManager.getConnection(url, "root", "9919");
             Statement stmt = conn.createStatement();
                         
-            String sql = "";
             
-            stmt.execute(sql);
             
+            ResultSet rs = stmt.executeQuery(sql);
+            //ResultSet'et løbes igennem og kolonne fornavn udskrives
+            while (rs.next()) {
+                System.out.println(rs.getString("fornavn"));
+            }
+
             stmt.close();
             conn.close();        
         } catch (ClassNotFoundException ex) {
@@ -37,4 +45,26 @@ public class DBForbindelse {
             System.out.println(ex.getLocalizedMessage());
         }
     }
+    public void DML(String sql){
+     
+    try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn;
+            String url = "jdbc:mysql://localhost:3306/biludlejning";
+            conn = DriverManager.getConnection(url, "root", "9919");
+            Statement stmt = conn.createStatement();
+                        
+            
+            
+            stmt.executeUpdate(sql);
+            
+            stmt.close();
+            conn.close();        
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Class not found"+ex.getLocalizedMessage());
+        } catch (SQLException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+}
+            
 }
