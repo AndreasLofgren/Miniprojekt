@@ -593,6 +593,9 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jFindReservationActionPerformed
 
     private void jOpretKundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretKundeActionPerformed
+        DBForbindelse db = new DBForbindelse("Insert into kunde "
+                + "values("+jCPRnr.getText()+","+jKørekort.getText()+",'"+jFornavn.getText()+"','"+jEfternavn.getText()+"',"+jTlfnr.getText()+")");
+        
         jTabbedPane2.setSelectedIndex(4);
         jFornavn1.setText(jFornavn.getText());
         jEfternavn1.setText(jEfternavn.getText());

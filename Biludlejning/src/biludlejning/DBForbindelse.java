@@ -17,17 +17,17 @@ import java.sql.Statement;
 public class DBForbindelse {
     
     
-    public DBForbindelse() {
-         try {
+    public DBForbindelse(String sql) {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
-            String url = "jdbc:mysql://localhost:3306/mycontacts";
-            conn = DriverManager.getConnection(url, "root", "root");
+            String url = "jdbc:mysql://localhost:3306/biludlejning";
+            conn = DriverManager.getConnection(url, "root", "9919");
             Statement stmt = conn.createStatement();
                         
-            String sql = "";
+           
             
-            stmt.execute(sql);
+            stmt.executeUpdate(sql);
             
             stmt.close();
             conn.close();        
@@ -36,5 +36,6 @@ public class DBForbindelse {
         } catch (SQLException ex) {
             System.out.println(ex.getLocalizedMessage());
         }
-    }
+        }
+    
 }

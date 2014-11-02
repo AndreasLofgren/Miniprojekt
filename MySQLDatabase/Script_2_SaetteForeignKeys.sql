@@ -7,8 +7,8 @@ set foreign_key_checks = 0;
 use biludlejning;
 -- 3 i konverterings algoritmen
 alter table kunde
-	add column kontraktnummer 		int,
-	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
+	add column kontraktnummer 		char(8);
+-- 	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
 
 alter table kontrakttabel
 	add column cpr					char(10),
@@ -17,7 +17,7 @@ alter table kontrakttabel
 	add foreign key (cpr)			references kunde (cpr);
 
 alter table reservation
-	add column kontraktnummer		int,
+	add column kontraktnummer		char(8),
 	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
 
 -- punkt 4 i konverterings algoritmen, for hver 1:n tilføjes primærnøglen fra 1-siden som fremmednøgle på n-siden.
@@ -26,13 +26,15 @@ alter table biler
 	add foreign key (prisgruppe)	references prisgruppe (prisgruppe);
 
 alter table ledigebiler
-	add column bilmaerke	varchar(15),
-	add column model		varchar(15),
+	add column bilmaerke			varchar(15),
+	add column model				varchar(15),
 	add foreign key (bilmaerke, model) references biler (bilmaerke, model);
 
 alter table reservation
- 	add column registreringsnummer 		char(7),
-	add foreign key (registreringsnummer) references ledigebiler (registreringsnummer);
+	add column registreringsnummer 		char(7);
+
+-- alter table reservation
+ -- 	add foreign key (registreringsnummer) references ledigebiler (registreringsnummer);
 
 -- punkt 5. Vi har ingen n:m forbindelser, derfor springer vi dette punkt over.
 -- punkt 6. vi har ingen flerværdi attributter, 

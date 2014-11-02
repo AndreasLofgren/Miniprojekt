@@ -53,7 +53,7 @@ primary key 			(date)
 drop table if exists kontrakttabel;
 create table kontrakttabel
 (
-kontraktnummer			int,
+kontraktnummer			char(8),
 primary key				(kontraktnummer)
 )engine=innodb;
 
