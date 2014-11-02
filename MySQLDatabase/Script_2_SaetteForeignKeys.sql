@@ -8,7 +8,7 @@ use biludlejning;
 -- 3 i konverterings algoritmen
 alter table kunde
 	add column kontraktnummer 		char(8);
--- 	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer); -- Når denne er sat til, kan der ikke tilføjes data fra netbeans.
+-- 	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
 
 alter table kontrakttabel
 	add column cpr					char(10),
