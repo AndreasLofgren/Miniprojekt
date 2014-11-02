@@ -11,16 +11,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  *
  * @author Andreas
  */
 public class DBForbindelse {
-    private ArrayList<String> result; 
+ //   private ArrayList<String> result; 
+    private DefaultListModel model = new DefaultListModel();
+    private String result;
     
     public DBForbindelse() {
-    result = new ArrayList<>();
+//     result = new ArrayList<>();
+       result = "";
         }
     public void DDL(String sql){
        // DDL bliver brugt når vi skal Selecte fra en tabel
@@ -36,10 +41,15 @@ public class DBForbindelse {
             ResultSet rs = stmt.executeQuery(sql);
             //ResultSet'et løbes igennem og kolonne fornavn udskrives
             while (rs.next()) {
-                System.out.println(rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
-            result.add("\n"+rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
+            //System.out.println(rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
+            //System.out.println(result);
+           // result.add("\n"+rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
+            result = rs.getString("fornavn")+", "+rs.getString("efternavn")+", "+rs.getString("cpr")+", "+rs.getString("kontraktnummer");
+            model.addElement(result+"\n");
+            
             }
-
+            System.out.println(model);
+//rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn")
             stmt.close();
             conn.close();        
         } catch (ClassNotFoundException ex) {
@@ -49,11 +59,20 @@ public class DBForbindelse {
         }
     }
     
-    public ArrayList getResult(){
-        return result;
+//    public ArrayList getArrayResult(){
+//        return result;
+//        
+//    }
+    
+    public ListModel getModel(){
+        return model;
+        
+        
     }
-    
-    
+    public ListModel clearModel(){
+        model.clear();
+        return model;
+    }
     
     public void DML(String sql){
      // DML bliver brugt når vi skal oprette en kunde, samt når vi skal opdatere informationer hos kunden.
