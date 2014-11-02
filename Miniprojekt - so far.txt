@@ -1,0 +1,13 @@
+- Rette småfejl og uoverensstemmelse til DB
+- Rapport (½)
+
+- Oprette samt kunne hente en kontrakt - kontrakt skal hentes fra DB (FIND RESERVATION - Print lejekontrakt)
+- Afregning (implementere formel fra case), Andreas: "Knap med beregn pris på lejekontrakt"
+- Udvælge en bil og få overført i kontrakt
+
+Mandag/ Tirsdag
+- PP til fremlæggelse (Programmering + Systemudvikling)
+
+Spørgsmål til David:
+- Hvordan får vi vores 'find reservation' til at vise fra DB til vores GUI?
+- Vi har noget script til vores DB der ikke vil fungere når dette kører (add foreign key - kontraktnummer (kunde))
