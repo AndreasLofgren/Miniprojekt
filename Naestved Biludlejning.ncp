@@ -8,9 +8,11 @@
         <Name>Erhverv</Name>
         <Access>Public</Access>
         <Location left="27" top="207" />
-        <Size width="162" height="94" />
+        <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int cvr</Member>
+        <Member type="Field">Stringt firmanavn</Member>
+        <Member type="Field">String kontraktperson</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -20,8 +22,7 @@
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int cpr</Member>
-        <Member type="Field">String fnavn</Member>
-        <Member type="Field">String enavn</Member>
+        <Member type="Field">String navn</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -31,9 +32,7 @@
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int koerekortnummer</Member>
-        <Member type="Field">String navn</Member>
         <Member type="Field">String tlf</Member>
-        <Member type="Field">String cpr</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -42,8 +41,8 @@
         <Location left="497" top="44" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">datetime fromdate</Member>
-        <Member type="Field">datetime todate</Member>
+        <Member type="Field">int startdato</Member>
+        <Member type="Field">int slutdato</Member>
         <Member type="Field">Kunde kunde</Member>
         <Member type="Field">int kontraknummer</Member>
         <Modifier>None</Modifier>
@@ -54,7 +53,7 @@
         <Location left="938" top="44" />
         <Size width="162" height="145" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">char prisgruppe</Member>
+        <Member type="Field">String prisgruppe</Member>
         <Member type="Field">int dagleje</Member>
         <Member type="Field">int kilometerpris</Member>
         <Member type="Field">int benzinpris</Member>
@@ -98,6 +97,8 @@
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="5" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -106,6 +107,8 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -114,6 +117,8 @@
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -122,6 +127,8 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="5">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -142,7 +149,7 @@
       <Entity type="Class">
         <Name>Kunde</Name>
         <Access>Public</Access>
-        <Location left="92" top="167" />
+        <Location left="28" top="200" />
         <Size width="162" height="152" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int koerekortnummer</Member>
@@ -154,11 +161,11 @@
       <Entity type="Class">
         <Name>Reservation</Name>
         <Access>Public</Access>
-        <Location left="341" top="156" />
+        <Location left="228" top="200" />
         <Size width="162" height="163" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private datetime fromdate</Member>
-        <Member type="Field">private datetime todate</Member>
+        <Member type="Field">private int startdato</Member>
+        <Member type="Field">private int slutdato</Member>
         <Member type="Field">private Kunde kunde</Member>
         <Member type="Field">private int kontraktnummer</Member>
         <Modifier>None</Modifier>
@@ -166,7 +173,7 @@
       <Entity type="Class">
         <Name>Bil</Name>
         <Access>Public</Access>
-        <Location left="786" top="292" />
+        <Location left="687" top="227" />
         <Size width="162" height="132" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Prisgruppe prisgruppe</Member>
@@ -177,7 +184,7 @@
       <Entity type="Class">
         <Name>LedigeBiler</Name>
         <Access>Public</Access>
-        <Location left="786" top="38" />
+        <Location left="687" top="23" />
         <Size width="162" height="149" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Bil bil</Member>
@@ -189,10 +196,10 @@
       <Entity type="Class">
         <Name>Prisgruppe</Name>
         <Access>Public</Access>
-        <Location left="1066" top="292" />
+        <Location left="897" top="201" />
         <Size width="162" height="151" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private Char prisgruppe</Member>
+        <Member type="Field">private String prisgruppe</Member>
         <Member type="Field">private int dagleje</Member>
         <Member type="Field">private int kilometerpris</Member>
         <Member type="Field">private int benzinpris</Member>
@@ -201,14 +208,14 @@
       <Entity type="Class">
         <Name>Biludlejning</Name>
         <Access>Public</Access>
-        <Location left="527" top="408" />
-        <Size width="162" height="162" />
+        <Location left="427" top="212" />
+        <Size width="217" height="162" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private ArrayList bil</Member>
-        <Member type="Field">private ArrayList ledigebiler</Member>
-        <Member type="Field">private ArrayList kunder</Member>
-        <Member type="Field">private ArrayList reservation</Member>
-        <Member type="Field">private ArrayList kontrakter</Member>
+        <Member type="Field">private ArrayList&lt;Bil&gt; bil</Member>
+        <Member type="Field">private ArrayList&lt;LedigeBiler&gt; ledigebiler</Member>
+        <Member type="Field">private ArrayList&lt;Kunde&gt; kunder</Member>
+        <Member type="Field">private ArrayList&lt;Reservation&gt; reservation</Member>
+        <Member type="Field">private ArrayList&lt;Kontrakter&gt; kontrakter</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Comment">
@@ -221,32 +228,66 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>203</X>
+          <Y>290</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>772</X>
+          <Y>197</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>764</X>
+          <Y>202</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>872</X>
+          <Y>272</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="1">
-        <StartOrientation>Vertical</StartOrientation>
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>402</X>
+          <Y>267</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>662</X>
+          <Y>303</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
