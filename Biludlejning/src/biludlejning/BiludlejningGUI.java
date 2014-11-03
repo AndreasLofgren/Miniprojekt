@@ -737,7 +737,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         db.DML("insert into kunde "
                 + "values(" + jCPRnr.getText() + ", " + jTlfnr.getText()+")");
         db.DML("insert into kontrakttabel"
-                + "values(" + jCPRnr.getText() + ", " + jStartDag.getSelectedItem()+jStartMåned.getSelectedIndex()+jStartÅr.getSelectedItem()+","+jSlutDag.getSelectedItem()+jSlutMåned.getSelectedIndex()+jSlutÅr+")");
+                + "values(" + jCPRnr.getText() + "," +jStartÅr.getSelectedItem()+"-"+jStartMåned.getSelectedIndex()+"-"+jStartDag.getSelectedItem()+","+jSlutÅr.getSelectedItem()+"-"+jSlutMåned.getSelectedIndex()+"-"+jSlutDag.getSelectedItem()+")");
         
         //System.out.println(jStartMåned.getSelectedIndex());
         
@@ -787,21 +787,10 @@ public class BiludlejningGUI extends javax.swing.JFrame {
 
     private void jSøgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgActionPerformed
         db.clearModel();
-        
-        db.DDL("select * from kunde"
-                + "where cpr = '"+jSøgefelt.getText()+"' or koerekortnummer = '" + jSøgefelt.getText() + "' or fornavn = '" + jSøgefelt.getText() + "' or efternavn = '"+ jSøgefelt.getText() +"'");
+        db.DDL("  select * from kunde , telefon where kunde.cpr = '"+jSøgefelt.getText()+"' or koerekortnummer = '"+jSøgefelt.getText()+"' or fornavn = '"+jSøgefelt.getText()+"' or efternavn = '"+jSøgefelt.getText()+"' or telefon.tlf = '"+jSøgefelt.getText()+"' " );
+      
         jList1.setModel(db.getModel());
 
-/*
-        select * from kunde "
-                
-                 + "where cpr = '" + jSøgefelt.getText() + "' or koerekortnummer = '" + jSøgefelt.getText() + "' or fornavn = '" + jSøgefelt.getText() + "' or efternavn = '" + jSøgefelt.getText() + "' ");
-// kunde.cpr = telefon.cpr or ,  or telefon.tlf = '" + jSøgefelt.getText() + "'telefon
-        
-        kunde.cpr = telefon.cpr or
-        
-        
-        */
     }//GEN-LAST:event_jSøgActionPerformed
 
     private void jAfleveringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAfleveringActionPerformed
