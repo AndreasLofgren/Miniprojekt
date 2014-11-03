@@ -5,17 +5,24 @@
  */
 package biludlejning;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author Andreas
  */
 public class BiludlejningGUI extends javax.swing.JFrame {
 
+    private DBForbindelse db;
+    private ResultSet rs;
+    
     /**
      * Creates new form BiludlejningGUI
      */
     public BiludlejningGUI() {
         initComponents();
+        db = new DBForbindelse();
+       
     }
 
     /**
@@ -36,27 +43,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jOpretReservation = new javax.swing.JButton();
         jFindReservation = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jFornavn = new javax.swing.JTextField();
-        jEfternavn = new javax.swing.JTextField();
-        jTlfnr = new javax.swing.JTextField();
-        jCPRnr = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jKørekort = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jOpretKunde = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jSøgefelt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jRediger = new javax.swing.JButton();
-        jOpdater = new javax.swing.JButton();
-        jSøg = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jLedigeBiler = new javax.swing.JTextArea();
@@ -75,6 +61,29 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jNæste = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jFornavn = new javax.swing.JTextField();
+        jEfternavn = new javax.swing.JTextField();
+        jTlfnr = new javax.swing.JTextField();
+        jCPRnr = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jKørekort = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jOpretKunde = new javax.swing.JButton();
+        jFejlfelt = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jSøgefelt = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jRediger = new javax.swing.JButton();
+        jOpdater = new javax.swing.JButton();
+        jSøg = new javax.swing.JButton();
+        jAflevering = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPrint = new javax.swing.JButton();
@@ -104,9 +113,16 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
+        jKørteKilometre = new javax.swing.JTextField();
+        jBenzinTank = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jBeregn = new javax.swing.JButton();
+        jSamletPris = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -157,147 +173,10 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jOpretReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFindReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addContainerGap(558, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Startside", jPanel1);
-
-        jLabel1.setText("Fornavn");
-
-        jLabel2.setText("Efternavn");
-
-        jLabel3.setText("Telefon");
-
-        jLabel4.setText("CPR");
-
-        jLabel5.setText("Kørekortsnummer");
-
-        jLabel6.setText("Kundeoplysninger");
-
-        jOpretKunde.setText("Opret kunde");
-        jOpretKunde.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jOpretKundeActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jEfternavn, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                            .addComponent(jKørekort)
-                            .addComponent(jFornavn)
-                            .addComponent(jCPRnr)
-                            .addComponent(jTlfnr)))
-                    .addComponent(jLabel6)
-                    .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(130, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFornavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jEfternavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCPRnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTlfnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jKørekort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Kundeoplysninger", jPanel3);
-
-        jSøgefelt.setText("Søg efter navn, kontraktnummer osv.");
-
-        jLabel8.setText("Find reservationer");
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane6.setViewportView(jTable2);
-
-        jRediger.setText("Redigér reservation");
-
-        jOpdater.setText("Opdater reservation");
-
-        jSøg.setText("Søg");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jOpdater)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel8)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jSøgefelt)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jSøg))
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRediger))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSøg))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
-                .addComponent(jRediger)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jOpdater)
-                .addGap(39, 39, 39))
-        );
-
-        jTabbedPane2.addTab("Find reservation", jPanel5);
 
         jLedigeBiler.setColumns(20);
         jLedigeBiler.setRows(5);
@@ -322,6 +201,11 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         jStartMåned.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December" }));
 
         jStartDag.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jStartDag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jStartDagActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Startdato");
 
@@ -407,10 +291,164 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jNæste)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(343, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ledige biler", jPanel2);
+
+        jLabel1.setText("Fornavn");
+
+        jLabel2.setText("Efternavn");
+
+        jLabel3.setText("Telefon");
+
+        jLabel4.setText("CPR");
+
+        jLabel5.setText("Kørekortsnummer");
+
+        jLabel6.setText("Kundeoplysninger");
+
+        jOpretKunde.setText("Opret kunde");
+        jOpretKunde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOpretKundeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jEfternavn, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(jKørekort)
+                            .addComponent(jFornavn)
+                            .addComponent(jCPRnr)
+                            .addComponent(jTlfnr)))
+                    .addComponent(jLabel6)
+                    .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFejlfelt))
+                .addContainerGap(130, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFornavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jEfternavn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCPRnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTlfnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jKørekort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jOpretKunde, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jFejlfelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Kundeoplysninger", jPanel3);
+
+        jSøgefelt.setText("Søg efter navn, kontraktnummer osv.");
+
+        jLabel8.setText("Find reservationer");
+
+        jRediger.setText("Redigér reservation");
+
+        jOpdater.setText("Opdater reservation");
+
+        jSøg.setText("Søg");
+        jSøg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSøgActionPerformed(evt);
+            }
+        });
+
+        jAflevering.setText("Aflevering");
+        jAflevering.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAfleveringActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addContainerGap())
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jSøgefelt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSøg))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jAflevering)
+                                        .addGap(248, 248, 248)
+                                        .addComponent(jOpdater))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(364, 364, 364))
+                                    .addComponent(jRediger))
+                                .addGap(0, 2, Short.MAX_VALUE)))
+                        .addContainerGap(13, Short.MAX_VALUE))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSøg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
+                .addComponent(jRediger)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jOpdater)
+                    .addComponent(jAflevering))
+                .addGap(39, 39, 39))
+        );
+
+        jTabbedPane2.addTab("Find reservation", jPanel5);
 
         jLabel7.setText("Lejekontrakt");
 
@@ -483,9 +521,24 @@ public class BiludlejningGUI extends javax.swing.JFrame {
 
         jLabel31.setText("Benzintank");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fuld tank", "3/4 tank", "1/2 tank", "1/4 tank" }));
+        jBenzinTank.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1.0", "0.75", "0.5", "0.25" }));
 
         jButton1.setText("Gem");
+
+        jLabel32.setText("Kilometerstart");
+
+        jLabel33.setText("Depositum");
+
+        jLabel34.setText("Afhentning af bil");
+
+        jBeregn.setText("Beregn");
+        jBeregn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeregnActionPerformed(evt);
+            }
+        });
+
+        jSamletPris.setText("Samlet pris");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -519,9 +572,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                                     .addComponent(jBilmærke, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                                     .addComponent(jBilmodel, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                                     .addComponent(jRegistreringsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                    .addComponent(jPrisgruppe1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jPrisgruppe1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel28)
@@ -535,11 +586,10 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(56, 130, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jBeregn)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                             .addComponent(jLabel25)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -561,11 +611,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                                         .addComponent(jLabel33)
                                         .addComponent(jLabel34)))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-=======
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel31))
-                        .addGap(0, 0, Short.MAX_VALUE))))
->>>>>>> FETCH_HEAD
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jBilmodel, jBilmærke, jCPRnr1, jEfternavn1, jFornavn1, jKørekort1, jRegistreringsnummer, jSlutdato, jStartdato, jTlfnr1});
@@ -621,17 +666,32 @@ public class BiludlejningGUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
                     .addComponent(jPrisgruppe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel32)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel31)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jKørteKilometre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBenzinTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                    .addComponent(jBeregn)
+                    .addComponent(jSamletPris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPrint)
                     .addComponent(jButton1))
@@ -663,15 +723,14 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jOpretReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretReservationActionPerformed
-        jTabbedPane2.setSelectedIndex(3);
+        jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_jOpretReservationActionPerformed
 
     private void jFindReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFindReservationActionPerformed
-        jTabbedPane2.setSelectedIndex(2);
+        jTabbedPane2.setSelectedIndex(3);
     }//GEN-LAST:event_jFindReservationActionPerformed
 
     private void jOpretKundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretKundeActionPerformed
-<<<<<<< HEAD
 
         db.DML("Insert into kunde "
                 + "values(" + jCPRnr.getText() + ", " + jKørekort.getText() + ",'" + jFornavn.getText() + "','" + jEfternavn.getText() + "'," + jTlfnr.getText() + ")");
@@ -700,18 +759,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
 //        jSlutdato.setText(jSlutDag.getSelectedItem() + " " + jSlutMåned.getSelectedItem() + " " + jSlutÅr.getSelectedItem());
 //        jPrisgruppe1.setText("" + jPrisgruppe.getSelectedItem());
 
-=======
-        jTabbedPane2.setSelectedIndex(4);
-        jFornavn1.setText(jFornavn.getText());
-        jEfternavn1.setText(jEfternavn.getText());
-        jCPRnr1.setText(jCPRnr.getText());
-        jTlfnr1.setText(jTlfnr.getText());
-        jKørekort1.setText(jKørekort.getText());
-        jStartdato.setText(jStartDag.getSelectedItem() + " " + jStartMåned.getSelectedItem() + " " + jStartÅr.getSelectedItem());
-        jSlutdato.setText(jSlutDag.getSelectedItem() + " " + jSlutMåned.getSelectedItem() + " " + jSlutÅr.getSelectedItem());
-        jPrisgruppe1.setText(""+jPrisgruppe.getSelectedItem());
-        
->>>>>>> FETCH_HEAD
         jFornavn1.setEditable(false);
         jEfternavn1.setEditable(false);
         jCPRnr1.setEditable(false);
@@ -723,7 +770,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jOpretKundeActionPerformed
 
     private void jNæsteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNæsteActionPerformed
-        jTabbedPane2.setSelectedIndex(1);
+        jTabbedPane2.setSelectedIndex(2);
     }//GEN-LAST:event_jNæsteActionPerformed
 
     private void jTlfnr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTlfnr1ActionPerformed
@@ -738,7 +785,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRegistreringsnummerActionPerformed
 
-<<<<<<< HEAD
     private void jSøgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgActionPerformed
         db.clearModel();
         
@@ -784,8 +830,6 @@ public class BiludlejningGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jStartDagActionPerformed
 
-=======
->>>>>>> FETCH_HEAD
     /**
      * @param args the command line arguments
      */
@@ -822,19 +866,23 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jAflevering;
+    private javax.swing.JComboBox jBenzinTank;
+    private javax.swing.JButton jBeregn;
     private javax.swing.JTextField jBilmodel;
     private javax.swing.JTextField jBilmærke;
     private javax.swing.JButton jButton1;
     private javax.swing.JTextField jCPRnr;
     private javax.swing.JTextField jCPRnr1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JTextField jEfternavn;
     private javax.swing.JTextField jEfternavn1;
+    private javax.swing.JTextField jFejlfelt;
     private javax.swing.JButton jFindReservation;
     private javax.swing.JTextField jFornavn;
     private javax.swing.JTextField jFornavn1;
     private javax.swing.JTextField jKørekort;
     private javax.swing.JTextField jKørekort1;
+    private javax.swing.JTextField jKørteKilometre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -860,6 +908,9 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -867,6 +918,7 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextArea jLedigeBiler;
+    private javax.swing.JList jList1;
     private javax.swing.JButton jNæste;
     private javax.swing.JButton jOpdater;
     private javax.swing.JButton jOpretKunde;
@@ -881,9 +933,10 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jPrisgruppe1;
     private javax.swing.JButton jRediger;
     private javax.swing.JTextField jRegistreringsnummer;
+    private javax.swing.JTextField jSamletPris;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JComboBox jSlutDag;
     private javax.swing.JComboBox jSlutMåned;
     private javax.swing.JTextField jSlutdato;
@@ -898,8 +951,8 @@ public class BiludlejningGUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTlfnr;
     private javax.swing.JTextField jTlfnr1;
     // End of variables declaration//GEN-END:variables

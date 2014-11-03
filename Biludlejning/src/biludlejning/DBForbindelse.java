@@ -7,33 +7,37 @@ package biludlejning;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  *
  * @author Andreas
  */
 public class DBForbindelse {
-    
+ //   private ArrayList<String> result; 
+    private DefaultListModel model = new DefaultListModel();
+    private String result;
     
     public DBForbindelse() {
-         try {
+//     result = new ArrayList<>();
+       result = "";
+        }
+    public void DDL(String sql){
+       // DDL bliver brugt når vi skal Selecte fra en tabel
+             try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
-<<<<<<< HEAD
             String url = "jdbc:mysql://localhost:3306/biludlejning";
-=======
-            String url = "jdbc:mysql://localhost:3306/mycontacts";
->>>>>>> FETCH_HEAD
             conn = DriverManager.getConnection(url, "root", "root");
             Statement stmt = conn.createStatement();
                         
-            String sql = "";
             
-            stmt.execute(sql);
             
-<<<<<<< HEAD
             ResultSet rs = stmt.executeQuery(sql);
             //ResultSet'et løbes igennem og kolonne fornavn udskrives
             while (rs.next()) {
@@ -46,8 +50,6 @@ public class DBForbindelse {
             }
             System.out.println(model);
             //rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn")
-=======
->>>>>>> FETCH_HEAD
             stmt.close();
             conn.close();        
         } catch (ClassNotFoundException ex) {
@@ -56,7 +58,6 @@ public class DBForbindelse {
             System.out.println(ex.getLocalizedMessage());
         }
     }
-<<<<<<< HEAD
     
 //    public ArrayList getArrayResult(){
 //        return result;
@@ -97,6 +98,4 @@ public class DBForbindelse {
      
           
         
-=======
->>>>>>> FETCH_HEAD
 }
