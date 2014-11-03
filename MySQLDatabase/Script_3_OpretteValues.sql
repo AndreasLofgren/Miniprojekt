@@ -4,11 +4,24 @@ insert into kunde
 values	(1308912000,10000000,'Chris', 'Justesen'),
 		(1308922000,10000001,'Chris', 'Justesen');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Select * from kunde;
 
 select * from kunde, telefon 
 where telefon.tlf = '' or kunde.cpr = '' or koerekortnummer = '' or fornavn = 'Chris' or efternavn = '';
+=======
+
+
+insert into telefon
+values (1308912000, 28976230);
+
+
+Select * from kunde;
+
+select * from kunde , telefon
+where kunde.cpr = '' or koerekortnummer = '' or fornavn = '' or efternavn = '' or telefon.tlf = '28976230';
+>>>>>>> FETCH_HEAD
 =======
 
 
