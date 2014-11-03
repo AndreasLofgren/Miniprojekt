@@ -3,37 +3,19 @@ use biludlejning;
 insert into kunde
 values	(1308912000,10000000,'Chris', 'Justesen'),
 		(1308922000,10000001,'Chris', 'Justesen');
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-Select * from kunde;
-
-select * from kunde, telefon 
-where telefon.tlf = '' or kunde.cpr = '' or koerekortnummer = '' or fornavn = 'Chris' or efternavn = '';
-=======
 
 
 insert into telefon
 values (1308912000, 28976230);
+
+insert into kontrakttabel
+values (28976230,2014-1-13,2014-2-13,1308912000); 
 
 
 Select * from kunde;
 
 select * from kunde , telefon
 where kunde.cpr = '' or koerekortnummer = '' or fornavn = '' or efternavn = '' or telefon.tlf = '28976230';
->>>>>>> FETCH_HEAD
-=======
-
-
-insert into telefon
-values (1308912000, 28976230);
-
-
-Select * from kunde;
-
-select * from kunde , telefon
-where kunde.cpr = '' or koerekortnummer = '' or fornavn = '' or efternavn = '' or telefon.tlf = '28976230';
->>>>>>> FETCH_HEAD
 
 insert into biler
 values	('Citroen', 'C1 2012', 'A'),
@@ -49,6 +31,9 @@ values	('Citroen', 'C1 2012', 'A'),
 		('BMW', '320 2010', 'E');
 
 
+
+insert into ledigebiler
+values (0,'BG51357',1.4, 'Diesel', '30000','Citoren', 'C1 2012');
 
 
 
