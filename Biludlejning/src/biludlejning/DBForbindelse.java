@@ -33,7 +33,7 @@ public class DBForbindelse {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
             String url = "jdbc:mysql://localhost:3306/biludlejning";
-            conn = DriverManager.getConnection(url, "root", "9919");
+            conn = DriverManager.getConnection(url, "root", "root");
             Statement stmt = conn.createStatement();
                         
             
