@@ -1,13 +1,13 @@
 use biludlejning;
 
 insert into kunde
-values	(1308912000,10000000,'Chris', 'Justesen', 28976230),
-		(1308922000,10000001,'Chris', 'Justesen', 28976230);
+values	(1308912000,10000000,'Chris', 'Justesen'),
+		(1308922000,10000001,'Chris', 'Justesen');
 
 Select * from kunde;
 
-select * from kunde 
-where cpr = '' or koerekortnummer = '28976230' or fornavn = '' or efternavn = '' or kontraktnummer = '' ;
+select * from kunde, telefon 
+where telefon.tlf = '' or kunde.cpr = '' or koerekortnummer = '' or fornavn = 'Chris' or efternavn = '';
 
 insert into biler
 values	('Citroen', 'C1 2012', 'A'),
