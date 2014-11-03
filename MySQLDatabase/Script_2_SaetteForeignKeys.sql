@@ -5,44 +5,34 @@ SET SQL_SAFE_UPDATES = 0;
 set foreign_key_checks = 0;
 
 use biludlejning;
--- 3 i konverterings algoritmen
-alter table kunde
-	add column kontraktnummer 		char(8);
--- 	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
+
+-- punkt 1 og 2 er allerede opfyldt.
+-- punkt 3 vi har ingen 1:1 ofrbindelser.
+-- punkt 4 i konverterings algoritmen, for hver 1:n tilføjes primærnøglen fra 1-siden som fremmednøgle på n-siden.
 
 alter table kontrakttabel
-	add column cpr					char(10),
-	add column date					datetime,
-	add foreign key (date)			references reservation (date),	
+	add column cpr					char(10)			not null,
 	add foreign key (cpr)			references kunde (cpr);
-
-alter table reservation
-	add column kontraktnummer		char(8),
-	add foreign key (kontraktnummer) references kontrakttabel (kontraktnummer);
-
--- punkt 4 i konverterings algoritmen, for hver 1:n tilføjes primærnøglen fra 1-siden som fremmednøgle på n-siden.
 
 alter table biler
 	add foreign key (prisgruppe)	references prisgruppe (prisgruppe);
 
 alter table ledigebiler
-	add column bilmaerke			varchar(15),
-	add column model				varchar(15),
+	add column bilmaerke			varchar(15)			not null,
+	add column model				varchar(15)			not null,
 	add foreign key (bilmaerke, model) references biler (bilmaerke, model);
 
-alter table reservation
-	add column registreringsnummer 		char(7);
+alter table kontrakttabel
+	add column registreringsnummer	char(7)				not null,
+	add foreign key (registreringsnummer) references ledigebiler (registreringsnummer);
 
--- alter table reservation
- -- 	add foreign key (registreringsnummer) references ledigebiler (registreringsnummer);
-
--- punkt 5. Vi har ingen n:m forbindelser, derfor springer vi dette punkt over.
--- punkt 6. vi har ingen flerværdi attributter, 
+-- punkt 5. Vi har ingen n:m forbindelser.
+-- punkt 6. Flerværdiattributer bliver splittet op i en ny tabel med primærnøglen og flerværdiattributen som en sammensat primærnøgle.
 
 create table telefon
 	(
-	cpr	char(10) not null,
-	tlf char(8),
+	cpr						char(10)			not null,
+	tlf 					char(8)				not null,
 	primary key (cpr, tlf),
 	foreign key (cpr) references kunde (cpr)
 	)engine=innodb;
