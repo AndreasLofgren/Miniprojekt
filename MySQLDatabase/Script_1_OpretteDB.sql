@@ -38,7 +38,7 @@ drop table if exists biler;
 create table biler
 (
 bilmaerke 				varchar(15)     	not null,
-model					varchar(15)   	 	not null,
+model					varchar(30)   	 	not null,
 prisgruppe				char(1)				not null,
 primary key 			(bilmaerke, model)
 )engine=innodb;

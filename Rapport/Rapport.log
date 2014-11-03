@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.3.4)  3 NOV 2014 09:55
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.3.4)  3 NOV 2014 11:06
 entering extended mode
 **Rapport.tex
 
@@ -507,54 +507,50 @@ Overfull \hbox (66.79134pt too wide) in paragraph at lines 83--84
  [][] 
  []
 
-<Classdiagram_prog.jpg, id=18, 626.34pt x 386.94562pt>
+[4 <C:/Users/Andreas/Dropbox/Datamatikerprogrammer/1.semester/Miniprojekt/Rappo
+rt/ER-diagram.png>] <Classdiagram_prog.jpg, id=21, 810.02625pt x 298.11375pt>
 File: Classdiagram_prog.jpg Graphic file (type jpg)
 
 <use Classdiagram_prog.jpg>
-Package pdftex.def Info: Classdiagram_prog.jpg used on input line 91.
-(pdftex.def)             Requested size: 426.79134pt x 263.67455pt.
+Package pdftex.def Info: Classdiagram_prog.jpg used on input line 93.
+(pdftex.def)             Requested size: 426.79134pt x 157.07611pt.
 
-Overfull \hbox (66.79134pt too wide) in paragraph at lines 91--92
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-[4 <C:/Users/Andreas/Dropbox/Datamatikerprogrammer/1.semester/Miniprojekt/Rappo
-rt/ER-diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 100--104
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--104
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--104
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
 
  []
 
 [5 <C:/Users/Andreas/Dropbox/Datamatikerprogrammer/1.semester/Miniprojekt/Rappo
 rt/Classdiagram_prog.jpg>] [6]
 (C:\Users\Andreas\Dropbox\Datamatikerprogrammer\1.semester\Miniprojekt\Rapport\
-Rapport.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+Rapport.aux) ) 
 Here is how much of TeX's memory you used:
  3634 strings out of 494045
  47088 string characters out of 3148382
- 101436 words of memory out of 3000000
+ 101444 words of memory out of 3000000
  6894 multiletter control sequences out of 15000+200000
  11044 words of font info for 42 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,9n,32p,375b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Rapport.pdf (6 pages, 221814 bytes).
+ 27i,9n,32p,398b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Rapport.pdf (6 pages, 225045 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

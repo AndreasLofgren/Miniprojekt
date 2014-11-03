@@ -7,49 +7,47 @@ package biludlejning;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
 
 /**
  *
  * @author Andreas
  */
 public class DBForbindelse {
- //   private ArrayList<String> result; 
-    private DefaultListModel model = new DefaultListModel();
-    private String result;
+    
     
     public DBForbindelse() {
-//     result = new ArrayList<>();
-       result = "";
-        }
-    public void DDL(String sql){
-       // DDL bliver brugt når vi skal Selecte fra en tabel
-             try {
+         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
+<<<<<<< HEAD
             String url = "jdbc:mysql://localhost:3306/biludlejning";
-            conn = DriverManager.getConnection(url, "root", "9919");
+=======
+            String url = "jdbc:mysql://localhost:3306/mycontacts";
+>>>>>>> FETCH_HEAD
+            conn = DriverManager.getConnection(url, "root", "root");
             Statement stmt = conn.createStatement();
                         
+            String sql = "";
             
+            stmt.execute(sql);
             
+<<<<<<< HEAD
             ResultSet rs = stmt.executeQuery(sql);
             //ResultSet'et løbes igennem og kolonne fornavn udskrives
             while (rs.next()) {
             //System.out.println(rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
             //System.out.println(result);
            // result.add("\n"+rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn"));
-            result = rs.getString("fornavn")+", "+rs.getString("efternavn")+", "+rs.getString("cpr")+", "+rs.getString("kontraktnummer");
-            model.addElement(result+"\n");
+            result = rs.getString("fornavn")+", "+rs.getString("efternavn")+", "+rs.getString("cpr")+", "+rs.getString("telefon.tlf")+" ";
+            model.addElement(result);
             
             }
             System.out.println(model);
-//rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn")
+            //rs.getString("cpr")+" "+rs.getString("fornavn")+" "+rs.getString("efternavn")
+=======
+>>>>>>> FETCH_HEAD
             stmt.close();
             conn.close();        
         } catch (ClassNotFoundException ex) {
@@ -58,6 +56,7 @@ public class DBForbindelse {
             System.out.println(ex.getLocalizedMessage());
         }
     }
+<<<<<<< HEAD
     
 //    public ArrayList getArrayResult(){
 //        return result;
@@ -80,7 +79,7 @@ public class DBForbindelse {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
             String url = "jdbc:mysql://localhost:3306/biludlejning";
-            conn = DriverManager.getConnection(url, "root", "9919");
+            conn = DriverManager.getConnection(url, "root", "root");
             Statement stmt = conn.createStatement();
                         
             
@@ -98,4 +97,6 @@ public class DBForbindelse {
      
           
         
+=======
+>>>>>>> FETCH_HEAD
 }

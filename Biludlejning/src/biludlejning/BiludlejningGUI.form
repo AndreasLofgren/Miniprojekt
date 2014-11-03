@@ -321,19 +321,20 @@
                 <Component class="javax.swing.JComboBox" name="jSlutM&#xe5;ned">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="12">
-                        <StringItem index="0" value="Januar"/>
-                        <StringItem index="1" value="Februar"/>
-                        <StringItem index="2" value="Marts"/>
-                        <StringItem index="3" value="April"/>
-                        <StringItem index="4" value="Maj"/>
-                        <StringItem index="5" value="Juni"/>
-                        <StringItem index="6" value="Juli"/>
-                        <StringItem index="7" value="August"/>
-                        <StringItem index="8" value="September"/>
-                        <StringItem index="9" value="Oktober"/>
-                        <StringItem index="10" value="November"/>
-                        <StringItem index="11" value="December"/>
+                      <StringArray count="13">
+                        <StringItem index="0" value=""/>
+                        <StringItem index="1" value="Januar"/>
+                        <StringItem index="2" value="Februar"/>
+                        <StringItem index="3" value="Marts"/>
+                        <StringItem index="4" value="April"/>
+                        <StringItem index="5" value="Maj"/>
+                        <StringItem index="6" value="Juni"/>
+                        <StringItem index="7" value="Juli"/>
+                        <StringItem index="8" value="August"/>
+                        <StringItem index="9" value="September"/>
+                        <StringItem index="10" value="Oktober"/>
+                        <StringItem index="11" value="November"/>
+                        <StringItem index="12" value="December"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -368,19 +369,20 @@
                 <Component class="javax.swing.JComboBox" name="jStartM&#xe5;ned">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="12">
-                        <StringItem index="0" value="Januar"/>
-                        <StringItem index="1" value="Februar"/>
-                        <StringItem index="2" value="Marts"/>
-                        <StringItem index="3" value="April"/>
-                        <StringItem index="4" value="Maj"/>
-                        <StringItem index="5" value="Juni"/>
-                        <StringItem index="6" value="Juli"/>
-                        <StringItem index="7" value="August"/>
-                        <StringItem index="8" value="September"/>
-                        <StringItem index="9" value="Oktober"/>
-                        <StringItem index="10" value="November"/>
-                        <StringItem index="11" value="December"/>
+                      <StringArray count="13">
+                        <StringItem index="0" value=""/>
+                        <StringItem index="1" value="Januar"/>
+                        <StringItem index="2" value="Februar"/>
+                        <StringItem index="3" value="Marts"/>
+                        <StringItem index="4" value="April"/>
+                        <StringItem index="5" value="Maj"/>
+                        <StringItem index="6" value="Juni"/>
+                        <StringItem index="7" value="Juli"/>
+                        <StringItem index="8" value="August"/>
+                        <StringItem index="9" value="September"/>
+                        <StringItem index="10" value="Oktober"/>
+                        <StringItem index="11" value="November"/>
+                        <StringItem index="12" value="December"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -793,7 +795,7 @@
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="jBenzinTank" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jKørteKilometre" alignment="0" pref="75" max="32767" attributes="0"/>
+                                                  <Component id="jKørteKilometre" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="jSamletPris" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>

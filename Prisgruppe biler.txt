@@ -1,0 +1,21 @@
+Prisklasse: 
+
+A:
+- Citroen C1 2012 - 200 pr. dag
+- Seat Ibiza 1.4 sport 2007 - 290 pr dag 
+- VW Polo 1.6 2012 - 295 pr. dag
+
+B:
+- Peugeot 308 1,6 hdi 2010 - 350 pr. dag
+- Ford Fiesta 1,0 turbo 125hk - 300 pr. dag
+
+C:
+- Kia Picanto 2011 - 485 pr. dag
+- VW Golf VI 1.4 TSI 160 2008 - 400 pr. dag
+
+D:
+- Passat 1,8t 2008 - 470 pr. dag
+- Mazda 6, Advance 2,0 2009 - 400 pr. dag
+E:
+- Dacia Duster 2014 - 500 pr. dag
+- BMW 320 2010 - 600 pr. dag
