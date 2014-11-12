@@ -1,5 +1,6 @@
 use biludlejning;
 
+
 insert into kunde
 values	(1308912000,10000000,'Chris', 'Justesen'),
 		(1308922000,10000001,'Chris', 'Justesen');
@@ -9,7 +10,7 @@ insert into telefon
 values (1308912000, 28976230);
 
 insert into kontrakttabel
-values (28976230,2014-1-13,2014-2-13,1308912000); 
+values ('28976230',2014-1-13,2014-2-13,'1308912000'); 
 
 
 Select * from kunde;
